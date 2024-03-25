@@ -20,6 +20,8 @@ import android.app.Application
 import coil.ImageLoader
 import coil.ImageLoaderFactory
 import coil.decode.SvgDecoder
+import com.airbnb.android.showkase.annotation.ShowkaseRoot
+import com.airbnb.android.showkase.annotation.ShowkaseRootModule
 import com.google.samples.apps.nowinandroid.sync.initializers.Sync
 import dagger.hilt.android.HiltAndroidApp
 
@@ -49,3 +51,6 @@ class NiaApplication : Application(), ImageLoaderFactory {
             .build()
     }
 }
+
+@ShowkaseRoot
+class MyRootModule: ShowkaseRootModule

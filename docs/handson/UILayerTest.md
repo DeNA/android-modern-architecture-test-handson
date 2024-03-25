@@ -45,9 +45,13 @@ UI elementsのテストでは、主に次のことを確認する。
   - あるUIコンポーネントを操作したときに、意図とおりイベントが発火することを確認する
   - あるUIコンポーネントを操作したときに、それによってUI Stateが更新され、それによってUIが変化する(または画面遷移する)ことを確認する
 
-UI elementsのテストは、いわゆるUIテストにあたる。テストはInstrumentation TestもしくはRobolectricで実行する。
+UI elementsのテストは、いわゆるUIテストにあたる。
+UIテストには、コード変更前後の画面スクリーンショットを比較し、意図しない差分がないことを確認するVisual Regression Test (VRT)も含まれる。
+これらのテストはInstrumentation TestもしくはRobolectricで実行する。
 
-このハンズオンではUI elementsのうち、Jetpack Composeのテストについて紹介する。Android Viewに対するテストについては「Androidテスト全書」などを参考にすること。<br>
+このハンズオンではUI elementsのうち、Jetpack Composeのテストについて紹介する。Android Viewに対するテストについては「Androidテスト全書」などを参考にすること。
+
+
 
 ## 目次
 
@@ -56,3 +60,7 @@ UI elementsのテストは、いわゆるUIテストにあたる。テストはI
     - [Composeのユニットテストについて学ぶ](./UIElementTest_Compose.md)
     - [ViewModelを結合してComposeをテストする](./UIElementTest_ComposeWithViewModel.md)
     - [ComposeのNavigationをテストする](./UIElementTest_Navigation.md)
+- Jetpack Composeの画面スクリーンショットを使ってVisual Regression Testを実現する
+    - [Composeのプレビュー画面でVisual Regression Testを行う](./VisualRegressionTest_Preview.md)
+    - Visual Regression TestをCIで運用する
+    - プレビューでは確認できないComposeの画面のスクリーンショットを撮る

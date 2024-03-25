@@ -1,12 +1,12 @@
 [versions]
 accompanist = "0.28.0"
 androidDesugarJdkLibs = "1.2.2"
-androidGradlePlugin = "7.4.0"
+androidGradlePlugin = "8.2.0"
 androidxActivity = "1.6.1"
 androidxAppCompat = "1.5.1"
 androidxBrowser = "1.4.0"
-androidxComposeBom = "2023.05.01"
-androidxComposeCompiler = "1.4.7"
+androidxComposeBom = "2023.10.01"
+androidxComposeCompiler = "1.5.4"
 androidxComposeRuntimeTracing = "1.0.0-alpha03"
 androidxCore = "1.9.0"
 androidxCoreSplashscreen = "1.0.0"
@@ -28,27 +28,29 @@ androidxUiAutomator = "2.2.0"
 androidxWindowManager = "1.0.0"
 androidxWork = "2.7.1"
 coil = "2.2.2"
-hilt = "2.44.2"
+hilt = "2.48.1"
 hiltExt = "1.0.0"
 jacoco = "0.8.7"
 junit4 = "4.13.2"
-kotlin = "1.8.21"
+kotlin = "1.9.20"
 kotlinxCoroutines = "1.7.2"
 kotlinxDatetime = "0.4.0"
 kotlinxSerializationJson = "1.4.1"
-ksp = "1.8.21-1.0.11"
+ksp = "1.9.20-1.0.14"
 lint = "30.3.1"
 #  https://github.com/mockk/mockk/issues/1035 を回避するため バージョン1.13.3を使う
 mockk = "1.13.3"
 okhttp = "4.10.0"
-protobuf = "3.21.12"
-protobufPlugin = "0.8.19"
+protobuf = "3.23.4"
+protobufPlugin = "0.9.4"
 retrofit = "2.9.0"
 retrofitKotlinxSerializationJson = "0.8.0"
 room = "2.5.2"
 secrets = "2.0.1"
 turbine = "0.12.1"
-robolectric = "4.10.3"
+robolectric = "4.11.1"
+showkase = "1.0.2"
+roborazzi = "1.10.1"
 
 [libraries]
 accompanist-flowlayout = { group = "com.google.accompanist", name = "accompanist-flowlayout", version.ref = "accompanist" }
@@ -125,6 +127,10 @@ room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 room-testing = { group = "androidx.room", name = "room-testing", version.ref = "room" }
 turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
+showkase = { group = "com.airbnb.android", name = "showkase", version.ref = "showkase" }
+showkase-processor = { group = "com.airbnb.android", name = "showkase-processor", version.ref = "showkase" }
+roborazzi = { group = "io.github.takahirom.roborazzi", name = "roborazzi", version.ref = "roborazzi"}
+roborazzi-compose = { group = "io.github.takahirom.roborazzi", name = "roborazzi-compose", version.ref = "roborazzi"}
 
 # Dependencies of the included build-logic
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
@@ -140,6 +146,7 @@ kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", versi
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 protobuf = { id = "com.google.protobuf", version.ref = "protobufPlugin" }
 secrets = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "secrets" }
+roborazzi = { id = "io.github.takahirom.roborazzi", version.ref = "roborazzi" }
 
 [bundles]
 mockk = ["mockk-android", "mockk-agent"]

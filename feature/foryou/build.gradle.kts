@@ -18,11 +18,12 @@ plugins {
     id("nowinandroid.android.feature")
     id("nowinandroid.android.library.compose")
     id("nowinandroid.android.library.jacoco")
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.roborazzi)
 }
 
 android {
     namespace = "com.google.samples.apps.nowinandroid.feature.foryou"
-
     testOptions {
         // TODO: Convert it as a convention plugin once Flamingo goes out (https://github.com/android/nowinandroid/issues/523)
         managedDevices {
@@ -35,7 +36,14 @@ android {
                 }
             }
         }
+        unitTests {
+            isIncludeAndroidResources = true
+        }
     }
+}
+
+ksp {
+    arg("skipPrivatePreviews", "true")
 }
 
 dependencies {
@@ -46,4 +54,7 @@ dependencies {
     implementation(libs.accompanist.flowlayout)
 
     testImplementation(libs.bundles.mockk)
+
+    implementation(libs.showkase)
+    ksp(libs.showkase.processor)
 }

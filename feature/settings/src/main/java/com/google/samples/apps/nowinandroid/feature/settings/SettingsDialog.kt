@@ -47,6 +47,7 @@ import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.airbnb.android.showkase.annotation.ShowkaseComposable
 import com.google.samples.apps.nowinandroid.core.designsystem.theme.NiaTheme
 import com.google.samples.apps.nowinandroid.core.model.data.DarkThemeConfig
 import com.google.samples.apps.nowinandroid.core.model.data.DarkThemeConfig.DARK
@@ -251,9 +252,10 @@ private fun TextLink(text: String, url: String) {
     )
 }
 
+@ShowkaseComposable(skip = true)
 @Preview
 @Composable
-private fun PreviewSettingsDialog() {
+fun PreviewSettingsDialog() {
     NiaTheme {
         SettingsDialog(
             onDismiss = {},

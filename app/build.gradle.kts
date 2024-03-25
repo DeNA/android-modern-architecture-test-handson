@@ -23,6 +23,8 @@ plugins {
     id("nowinandroid.android.hilt")
     id("jacoco")
     id("nowinandroid.firebase-perf")
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.roborazzi)
 }
 
 android {
@@ -74,6 +76,12 @@ android {
     }
     testOptions {
         unitTests {
+            all {
+                it.systemProperty(
+                    "roborazzi.output.dir",
+                    rootProject.file("screenshots").absolutePath
+                )
+            }
             isIncludeAndroidResources = true
         }
         // TODO: Convert it as a convention plugin once Flamingo goes out (https://github.com/android/nowinandroid/issues/523)
@@ -89,6 +97,10 @@ android {
         }
     }
     namespace = "com.google.samples.apps.nowinandroid"
+}
+
+ksp {
+    arg("skipPrivatePreviews", "true")
 }
 
 dependencies {
@@ -107,6 +119,7 @@ dependencies {
     implementation(project(":sync:work"))
 
     androidTestImplementation(project(":core:testing"))
+    testImplementation(project(":core:testing"))
     androidTestImplementation(project(":core:datastore-test"))
     androidTestImplementation(project(":core:data-test"))
     androidTestImplementation(project(":core:network"))
@@ -134,6 +147,13 @@ dependencies {
 
     implementation(libs.coil.kt)
     implementation(libs.coil.kt.svg)
+
+    implementation(libs.showkase)
+    ksp(libs.showkase.processor)
+
+    testImplementation(libs.roborazzi)
+    testImplementation(libs.roborazzi.compose)
+    testImplementation(libs.robolectric)
 }
 
 // androidx.test is forcing JUnit, 4.12. This forces it to use 4.13

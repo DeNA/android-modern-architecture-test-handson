@@ -17,6 +17,7 @@ plugins {
     id("nowinandroid.android.feature")
     id("nowinandroid.android.library.compose")
     id("nowinandroid.android.library.jacoco")
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -35,4 +36,15 @@ android {
             }
         }
     }
+
+    defaultConfig {
+        ksp {
+            arg("skipPrivatePreviews", "true")
+        }
+    }
+}
+
+dependencies {
+    implementation(libs.showkase)
+    ksp(libs.showkase.processor)
 }

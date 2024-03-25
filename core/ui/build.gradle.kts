@@ -17,11 +17,15 @@ plugins {
     id("nowinandroid.android.library")
     id("nowinandroid.android.library.compose")
     id("nowinandroid.android.library.jacoco")
+    alias(libs.plugins.ksp)
 }
 
 android {
     defaultConfig {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        ksp {
+            arg("skipPrivatePreviews", "true")
+        }
     }
     namespace = "com.google.samples.apps.nowinandroid.core.ui"
 }
@@ -50,4 +54,7 @@ dependencies {
     api(libs.androidx.tracing.ktx)
 
     androidTestImplementation(project(":core:testing"))
+
+    implementation(libs.showkase)
+    ksp(libs.showkase.processor)
 }

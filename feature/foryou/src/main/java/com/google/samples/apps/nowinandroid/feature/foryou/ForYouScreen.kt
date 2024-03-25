@@ -69,6 +69,7 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.max
 import androidx.compose.ui.unit.sp
@@ -160,16 +161,18 @@ internal fun ForYouScreen(
             saveFollowedTopics = saveFollowedTopics,
             // Custom LayoutModifier to remove the enforced parent 16.dp contentPadding
             // from the LazyVerticalGrid and enable edge-to-edge scrolling for this section
-            interestsItemModifier = Modifier.layout { measurable, constraints ->
-                val placeable = measurable.measure(
-                    constraints.copy(
-                        maxWidth = constraints.maxWidth + 32.dp.roundToPx()
+            interestsItemModifier = Modifier
+                .layout { measurable, constraints ->
+                    val placeable = measurable.measure(
+                        constraints.copy(
+                            maxWidth = constraints.maxWidth + 32.dp.roundToPx()
+                        )
                     )
-                )
-                layout(placeable.width, placeable.height) {
-                    placeable.place(0, 0)
+                    layout(placeable.width, placeable.height) {
+                        placeable.place(0, 0)
+                    }
                 }
-            }.testTag("onboarding")
+                .testTag("onboarding")
         )
 
         newsFeed(
@@ -385,7 +388,7 @@ fun TopicIcon(
     )
 }
 
-@DevicePreviews
+@Preview
 @Composable
 fun ForYouScreenPopulatedFeed() {
     BoxWithConstraints {
@@ -404,9 +407,9 @@ fun ForYouScreenPopulatedFeed() {
     }
 }
 
-@DevicePreviews
+@Preview
 @Composable
-fun ForYouScreenOfflinePopulatedFeed() {
+private fun ForYouScreenOfflinePopulatedFeed() {
     BoxWithConstraints {
         NiaTheme {
             ForYouScreen(
@@ -423,7 +426,7 @@ fun ForYouScreenOfflinePopulatedFeed() {
     }
 }
 
-@DevicePreviews
+@Preview
 @Composable
 fun ForYouScreenTopicSelection() {
     BoxWithConstraints {
@@ -444,9 +447,9 @@ fun ForYouScreenTopicSelection() {
     }
 }
 
-@DevicePreviews
+@Preview
 @Composable
-fun ForYouScreenLoading() {
+private fun ForYouScreenLoading() {
     BoxWithConstraints {
         NiaTheme {
             ForYouScreen(
@@ -461,9 +464,9 @@ fun ForYouScreenLoading() {
     }
 }
 
-@DevicePreviews
+@Preview
 @Composable
-fun ForYouScreenPopulatedAndLoading() {
+private fun ForYouScreenPopulatedAndLoading() {
     BoxWithConstraints {
         NiaTheme {
             ForYouScreen(

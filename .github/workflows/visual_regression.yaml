@@ -12,13 +12,13 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Validate Gradle Wrapper
-        uses: gradle/wrapper-validation-action@v1
+        uses: gradle/wrapper-validation-action@v2
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
           java-version: 17
@@ -30,7 +30,7 @@ jobs:
         uses: android-actions/setup-android@v3
 
       # 期待値画像をbaseブランチのArtifactからダウンロードする
-      - uses: dawidd6/action-download-artifact@v2
+      - uses: dawidd6/action-download-artifact@v3
         with:
           name: screenshots # artifact名
           path: .reg/expected # ダウンロードしたArtifactsの展開先
@@ -39,11 +39,11 @@ jobs:
 
       # 現在のブランチでスクリーンショット画像を取得する
       - name: Record current screenshots
-        run: ./gradlew :app:recordRoborazziDemoExerciseDebug
+        run: ./gradlew :app:recordRoborazziDemoAnswerDebug
 
       # reg-suitのインストールと実行
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 'latest'
 

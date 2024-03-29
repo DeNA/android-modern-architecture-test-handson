@@ -164,3 +164,7 @@ configurations.configureEach {
         force("org.objenesis:objenesis:2.6")
     }
 }
+
+roborazzi {
+    outputDir.set(rootProject.file("screenshots"))
+}

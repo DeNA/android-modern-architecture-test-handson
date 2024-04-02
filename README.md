@@ -1,6 +1,6 @@
 # Android テストハンズオン
 
-## ハンズオンについて 
+## ハンズオンについて
 
 このハンズオンでは「[Now in Android App](https://github.com/android/nowinandroid)」のアプリを題材に、アプリアーキテクチャのレイヤにそってテストの書き方を学ぶ。<br>
 <br>
@@ -19,7 +19,7 @@ Now in Android Appで使用されている技術は次のとおりで、これ�
 - Jetpack Compose
 - Dagger Hilt
 
-## ハンズオンの進め方
+## ハンズオンの進め方()
 
 1. 本Repositoryをクローンし、カレントディレクトリをAndroid Studio (Electric Eel|2022.1.1+)で開く
 2. Build Variantを`demoExerciseDebug`にする

@@ -1,19 +1,14 @@
-name: Upload expected image
+name: Visual Regression
 
-on:
-  push:
-    branches:
-      - main
+on: pull_request
 
 concurrency:
   group: build-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  upload-expected-image:
+  visual-regression:
     runs-on: ubuntu-latest
-    
-    timeout-minutes: 60
 
     steps:
       - name: Checkout
@@ -34,13 +29,13 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Create screenshots
-        run: |
-          # Create screenshots
-          ./gradlew :app:recordRoborazziDemoAnswerDebug
+      # 期待値画像をbaseブランチのArtifactからダウンロードする
 
-      # Upload screenshots to GitHub Actions Artifacts
-      - uses: actions/upload-artifact@v4
-        with:
-          name: expected_screenshots
-          path: screenshots/*
+
+      # 現在のブランチでスクリーンショット画像を取得する
+
+
+      # reg-suitのインストールと実行
+
+
+      # 結果をArtifactsにアップロード

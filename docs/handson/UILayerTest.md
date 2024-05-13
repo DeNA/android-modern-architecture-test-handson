@@ -63,4 +63,4 @@ UIテストには、コード変更前後の画面スクリーンショットを
 - Jetpack Composeの画面スクリーンショットを使ってVisual Regression Testを実現する
     - [Composeのプレビュー画面でVisual Regression Testを行う](./VisualRegressionTest_Preview.md)
     - [Visual Regression TestをCIで実行する](./VisualRegressionTest_CI.md)
-    - プレビューでは確認できないComposeの画面のスクリーンショットを撮る
+    - [様々なケースでComposeの画面スクリーンショットを撮る](./VisualRegressionTest_Advanced.md)

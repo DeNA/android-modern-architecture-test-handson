@@ -16,12 +16,14 @@
 
 package com.google.samples.apps.nowinandroid.feature.interests
 
+import android.content.Context
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -29,7 +31,7 @@ import com.google.samples.apps.nowinandroid.core.designsystem.component.NiaBackg
 import com.google.samples.apps.nowinandroid.core.designsystem.component.NiaLoadingWheel
 import com.google.samples.apps.nowinandroid.core.designsystem.theme.NiaTheme
 import com.google.samples.apps.nowinandroid.core.domain.model.FollowableTopic
-import com.google.samples.apps.nowinandroid.core.model.data.previewTopics
+import com.google.samples.apps.nowinandroid.core.model.data.Topic
 import com.google.samples.apps.nowinandroid.core.ui.DevicePreviews
 
 @Composable
@@ -85,11 +87,12 @@ private fun InterestsEmptyScreen() {
 @DevicePreviews
 @Composable
 fun InterestsScreenPopulated() {
+    val context = LocalContext.current
     NiaTheme {
         NiaBackground {
             InterestsScreen(
                 uiState = InterestsUiState.Interests(
-                    topics = previewTopics.map { FollowableTopic(it, false) }
+                    topics = getPreviewTopics(context).map { FollowableTopic(it, false) }
                 ),
                 followTopic = { _, _ -> },
                 navigateToTopic = {},
@@ -100,7 +103,7 @@ fun InterestsScreenPopulated() {
 
 @DevicePreviews
 @Composable
-fun InterestsScreenLoading() {
+private fun InterestsScreenLoading() {
     NiaTheme {
         NiaBackground {
             InterestsScreen(
@@ -114,7 +117,7 @@ fun InterestsScreenLoading() {
 
 @DevicePreviews
 @Composable
-fun InterestsScreenEmpty() {
+private fun InterestsScreenEmpty() {
     NiaTheme {
         NiaBackground {
             InterestsScreen(
@@ -124,4 +127,33 @@ fun InterestsScreenEmpty() {
             )
         }
     }
+}
+
+fun getPreviewTopics(context: Context): List<Topic> {
+    return listOf(
+        Topic(
+            id = "2",
+            name = context.getString(R.string.headlines),
+            shortDescription = context.getString(R.string.headlines_short_description),
+            longDescription = context.getString(R.string.headlines_long_description),
+            imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_Headlines.svg?alt=media&token=506faab0-617a-4668-9e63-4a2fb996603f",
+            url = ""
+        ),
+        Topic(
+            id = "3",
+            name = context.getString(R.string.ui),
+            shortDescription = context.getString(R.string.ui_short_description),
+            longDescription = context.getString(R.string.ui_long_description),
+            imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_UI.svg?alt=media&token=0ee1842b-12e8-435f-87ba-a5bb02c47594",
+            url = ""
+        ),
+        Topic(
+            id = "4",
+            name = context.getString(R.string.testing),
+            shortDescription = context.getString(R.string.testing_short_description),
+            longDescription = context.getString(R.string.testing_long_description),
+            imageUrl = "https://firebasestorage.googleapis.com/v0/b/now-in-android.appspot.com/o/img%2Fic_topic_Testing.svg?alt=media&token=a11533c4-7cc8-4b11-91a3-806158ebf428",
+            url = ""
+        ),
+    )
 }

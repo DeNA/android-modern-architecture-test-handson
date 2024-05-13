@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="headlines">ニュース</string>
+    <string name="headlines_short_description">皆に見てもらいたいニュース</string>
+    <string name="headlines_long_description">アンドロイドの最新イベントや発表情報をお届けします</string>
+
+    <string name="ui">ユーザーインターフェース</string>
+    <string name="ui_short_description">マテリアルデザイン、ナビゲーション、テキスト、ページング、アクセシビリティ（a11y）、国際化（i18n）、ローカライゼーション（l10n）、アニメーション、大画面、ウィジェット</string>
+    <string name="ui_long_description">アプリのユーザー・インターフェース（ユーザーが見て対話できるすべて）を最適化する方法を学びましょう。マテリアルデザイン、ナビゲーション、テキスト、ページング、コンポーズ、アクセシビリティ（a11y）、国際化（i18n）、ローカライゼーション（l10n）、アニメーション、大画面、ウィジェットなど、さまざまなトピックについて最新情報を入手できます！</string>
+
+    <string name="testing">テスト</string>
+    <string name="testing_short_description">CI、Espresso、TestLabなど</string>
+    <string name="testing_long_description">テストは、アプリ開発プロセスに不可欠な要素です。アプリに対して一貫してテストを実行することで、公開する前にアプリの正しさ、機能的な動作、ユーザビリティを検証することができます。CI、Espresso、Firebase TestLab の最新のトリックをご覧ください。</string>
+</resources>

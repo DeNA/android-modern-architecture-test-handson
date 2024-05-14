@@ -37,6 +37,12 @@ android {
             }
         }
         unitTests {
+            all {
+                it.systemProperty(
+                    "roborazzi.output.dir",
+                    rootProject.file("screenshots").absolutePath
+                )
+            }
             isIncludeAndroidResources = true
         }
     }
@@ -57,4 +63,14 @@ dependencies {
 
     implementation(libs.showkase)
     ksp(libs.showkase.processor)
+
+    testImplementation(libs.roborazzi)
+    testImplementation(libs.roborazzi.compose)
+    testImplementation(libs.robolectric)
+
+    testImplementation(libs.coil.kt.test)
+}
+
+roborazzi {
+    outputDir.set(rootProject.file("screenshots"))
 }

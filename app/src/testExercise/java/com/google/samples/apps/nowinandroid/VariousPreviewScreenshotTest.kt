@@ -23,7 +23,7 @@ import org.robolectric.annotation.GraphicsMode
 @RunWith(ParameterizedRobolectricTestRunner::class)
 @GraphicsMode(GraphicsMode.Mode.NATIVE)
 @Config(qualifiers = RobolectricDeviceQualifiers.Pixel7)
-class AllPreviewScreenshotTest(
+class VariousPreviewScreenshotTest(
     private val testCase: TestCase
 ) {
     @get:Rule

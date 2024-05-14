@@ -15,12 +15,24 @@
      limitations under the License.
 -->
 <resources>
-    <string name="interests">Interests</string>
-    <string name="loading">Loading data</string>
-    <string name="empty_header">"No available data"</string>
-    <string name="card_follow_button_content_desc">Follow interest button</string>
-    <string name="card_unfollow_button_content_desc">Unfollow interest button</string>
-    <string name="top_app_bar_title">Interests</string>
-    <string name="top_app_bar_action_menu">Menu</string>
-    <string name="top_app_bar_action_search">Search</string>
+    <string name="interests" translatable="false">Interests</string>
+    <string name="loading" translatable="false">Loading data</string>
+    <string name="empty_header" translatable="false">"No available data"</string>
+    <string name="card_follow_button_content_desc" translatable="false">Follow interest button</string>
+    <string name="card_unfollow_button_content_desc" translatable="false">Unfollow interest button</string>
+    <string name="top_app_bar_title" translatable="false">Interests</string>
+    <string name="top_app_bar_action_menu" translatable="false">Menu</string>
+    <string name="top_app_bar_action_search" translatable="false">Search</string>
+
+    <string name="headlines">Headlines</string>
+    <string name="headlines_short_description">News we want everyone to see</string>
+    <string name="headlines_long_description">Stay up to date with the latest events and announcements from Android!</string>
+
+    <string name="ui">UI</string>
+    <string name="ui_short_description">Material Design, Navigation, Text, Paging, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets</string>
+    <string name="ui_long_description">Learn how to optimize your app\'s user interface - everything that users can see and interact with. Stay up to date on tocpis such as Material Design, Navigation, Text, Paging, Compose, Accessibility (a11y), Internationalization (i18n), Localization (l10n), Animations, Large Screens, Widgets, and many more!</string>
+
+    <string name="testing">Testing</string>
+    <string name="testing_short_description">CI, Espresso, TestLab, etc</string>
+    <string name="testing_long_description">Testing is an integral part of the app development process. By running tests against your app consistently, you can verify your app\'s correctness, functional behavior, and usability before you release it publicly. Stay up to date on the latest tricks in CI, Espresso, and Firebase TestLab.</string>
 </resources>

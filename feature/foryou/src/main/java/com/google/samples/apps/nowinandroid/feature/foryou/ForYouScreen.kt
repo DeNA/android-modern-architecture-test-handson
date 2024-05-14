@@ -18,6 +18,7 @@
 package com.google.samples.apps.nowinandroid.feature.foryou
 
 import android.app.Activity
+import android.util.Log
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
@@ -376,6 +377,7 @@ fun TopicIcon(
     imageUrl: String,
     modifier: Modifier = Modifier
 ) {
+    Log.d("ForYouScreen", "imageUrl = $imageUrl")
     AsyncImage(
         // TODO b/228077205, show loading image visual instead of static placeholder
         placeholder = painterResource(R.drawable.ic_icon_placeholder),

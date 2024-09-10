@@ -23,7 +23,7 @@ enum class NiaFlavor(val dimension: FlavorDimension, val applicationIdSuffix: St
 }
 
 fun Project.configureFlavors(
-    commonExtension: CommonExtension<*, *, *, *, *>,
+    commonExtension: CommonExtension<*, *, *, *, *, *>,
     flavorConfigurationBlock: ProductFlavor.(flavor: NiaFlavor) -> Unit = {}
 ) {
     commonExtension.apply {

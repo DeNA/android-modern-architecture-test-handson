@@ -97,8 +97,8 @@ plugins {
 }
 
 dependencies {
-    implementation("com.airbnb.android:showkase:1.0.2")
-    ksp("com.airbnb.android:showkase-processor:1.0.2")
+    implementation("com.airbnb.android:showkase:1.0.3")
+    ksp("com.airbnb.android:showkase-processor:1.0.3")
 }
 ```
 
@@ -238,7 +238,7 @@ RoborazziはRobolectricに依存しているため、RoborazziとRobolectricの�
 
 ```groovy
 plugins {
-    id("io.github.takahirom.roborazzi") version "1.10.1" apply false
+    id("io.github.takahirom.roborazzi") version "1.26.0" apply false
 }
 ```
 
@@ -248,7 +248,7 @@ plugins {
 
 ```kotlin
 plugins {
-    id("io.github.takahirom.roborazzi") version "1.10.1" apply false
+    id("io.github.takahirom.roborazzi") version "1.26.0"
 }
 
 android {
@@ -260,9 +260,9 @@ android {
 }
 
 dependencies {
-    testImplementation("io.github.takahirom.roborazzi:roborazzi:1.10.1")
-    testImplementation("io.github.takahirom.roborazzi:roborazzi-compose:1.10.1")
-    testImplementation("org.robolectric:robolectric:4.11.1")
+    testImplementation("io.github.takahirom.roborazzi:roborazzi:1.26.0")
+    testImplementation("io.github.takahirom.roborazzi:roborazzi-compose:1.26.0")
+    testImplementation("org.robolectric:robolectric:4.13")
 }
 ```
 

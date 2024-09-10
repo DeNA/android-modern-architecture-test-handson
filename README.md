@@ -44,6 +44,11 @@ Now in Android Appで使用されている技術は次のとおりで、これ�
     - Composeのユニットテストについて学ぶ
     - ViewModelを結合してComposeをテストする
     - ComposeのNavigationをテストする
+- Jetpack Composeの画面スクリーンショットを使ってVisual Regression Testを実現する
+    - Composeのプレビュー画面でVisual Regression Testを行う
+    - Visual Regression TestをCIで実行する
+    - 様々なケースでComposeの画面スクリーンショットを撮る
+    - Composable Preview Scannerを使ってプレビュー画面のスクリーンショットを撮る
 
 ## オリジナルのNow in Android Appからの変更点
 

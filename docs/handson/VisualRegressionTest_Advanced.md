@@ -26,7 +26,7 @@
 
 #### ユースケース1：1つの`@Preview`アノテーションにつき、複数パターンのスクリーンショットを保存する
 
-このユースケースは、「[Composeのプレビュー画面でVisual Regression Testを行う](VisualRegressionTest_Test.md)」で紹介した`ParameterizedRobolectricTestRunner`の仕組みを使うと自然に実現できる。
+このユースケースは、「[Composeのプレビュー画面でVisual Regression Testを行う](VisualRegressionTest_Preview.md)」で紹介した`ParameterizedRobolectricTestRunner`の仕組みを使うと自然に実現できる。
 
 ```kotlin
 @RunWith(ParameterizedRobolectricTestRunner::class)

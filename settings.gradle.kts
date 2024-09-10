@@ -1,3 +1,5 @@
+import java.net.URI
+
 /*
  * Copyright 2021 The Android Open Source Project
  *
@@ -28,6 +30,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven {
+            url = URI("https://jitpack.io")
+        }
     }
 }
 rootProject.name = "nowinandroid"

@@ -18,6 +18,7 @@
 package com.google.samples.apps.nowinandroid.feature.foryou
 
 import android.app.Activity
+import android.content.res.Configuration
 import android.util.Log
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
@@ -26,7 +27,6 @@ import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -87,7 +87,7 @@ import com.google.samples.apps.nowinandroid.core.designsystem.theme.NiaTheme
 import com.google.samples.apps.nowinandroid.core.domain.model.FollowableTopic
 import com.google.samples.apps.nowinandroid.core.domain.model.previewUserNewsResources
 import com.google.samples.apps.nowinandroid.core.model.data.previewTopics
-import com.google.samples.apps.nowinandroid.core.ui.DevicePreviews
+import com.google.samples.apps.nowinandroid.core.ui.DelayedPreview
 import com.google.samples.apps.nowinandroid.core.ui.NewsFeedUiState
 import com.google.samples.apps.nowinandroid.core.ui.TrackScrollJank
 import com.google.samples.apps.nowinandroid.core.ui.newsFeed
@@ -390,10 +390,13 @@ fun TopicIcon(
     )
 }
 
-@Preview
+
+@Preview(widthDp = 1280, heightDp = 300)
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(fontScale = 2f)
 @Composable
 fun ForYouScreenPopulatedFeed() {
-    BoxWithConstraints {
+    Box {
         NiaTheme {
             ForYouScreen(
                 isSyncing = false,
@@ -412,7 +415,7 @@ fun ForYouScreenPopulatedFeed() {
 @Preview
 @Composable
 private fun ForYouScreenOfflinePopulatedFeed() {
-    BoxWithConstraints {
+    Box {
         NiaTheme {
             ForYouScreen(
                 isSyncing = false,
@@ -431,7 +434,7 @@ private fun ForYouScreenOfflinePopulatedFeed() {
 @Preview
 @Composable
 fun ForYouScreenTopicSelection() {
-    BoxWithConstraints {
+    Box {
         NiaTheme {
             ForYouScreen(
                 isSyncing = false,
@@ -450,9 +453,10 @@ fun ForYouScreenTopicSelection() {
 }
 
 @Preview
+@DelayedPreview(delay = 2000)
 @Composable
-private fun ForYouScreenLoading() {
-    BoxWithConstraints {
+fun ForYouScreenLoading() {
+    Box {
         NiaTheme {
             ForYouScreen(
                 isSyncing = false,
@@ -469,7 +473,7 @@ private fun ForYouScreenLoading() {
 @Preview
 @Composable
 private fun ForYouScreenPopulatedAndLoading() {
-    BoxWithConstraints {
+    Box {
         NiaTheme {
             ForYouScreen(
                 isSyncing = true,

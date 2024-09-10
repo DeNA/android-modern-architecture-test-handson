@@ -14,6 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import com.github.takahirom.roborazzi.ExperimentalRoborazziApi
 import com.google.samples.apps.nowinandroid.NiaBuildType
 
 plugins {
@@ -34,7 +35,8 @@ android {
         versionName = "0.0.3" // X.Y.Z; X = Major, Y = minor, Z = Patch level
 
         // Custom test runner to set up Hilt dependency graph
-        testInstrumentationRunner = "com.google.samples.apps.nowinandroid.core.testing.NiaTestRunner"
+        testInstrumentationRunner =
+            "com.google.samples.apps.nowinandroid.core.testing.NiaTestRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -47,7 +49,10 @@ android {
         val release by getting {
             isMinifyEnabled = true
             applicationIdSuffix = NiaBuildType.RELEASE.applicationIdSuffix
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
 
             // To publish on the Play store a private signing key is required, but to allow anyone
             // who clones the code to sign and run the release variant, use the debug signing key.
@@ -77,9 +82,9 @@ android {
     testOptions {
         unitTests {
             all {
-                it.systemProperty(
-                    "roborazzi.output.dir",
-                    rootProject.file("screenshots").absolutePath
+                it.systemProperties(
+                    "roborazzi.output.dir" to rootProject.file("screenshots").absolutePath,
+                    "robolectric.pixelCopyRenderMode" to "hardware"
                 )
             }
             isIncludeAndroidResources = true
@@ -153,6 +158,8 @@ dependencies {
 
     testImplementation(libs.roborazzi)
     testImplementation(libs.roborazzi.compose)
+    testImplementation(libs.roborazzi.compose.preview.scanner.support)
+    testImplementation(libs.compose.preview.scanner)
     testImplementation(libs.robolectric)
 }
 
@@ -167,4 +174,13 @@ configurations.configureEach {
 
 roborazzi {
     outputDir.set(rootProject.file("screenshots"))
+    @OptIn(ExperimentalRoborazziApi::class)
+    generateComposePreviewRobolectricTests {
+        enable = true
+        testerQualifiedClassName = "com.google.samples.apps.nowinandroid.MyComposePreviewTester"
+        packages = listOf(
+            "com.google.samples.apps.nowinandroid.feature.interests",
+            "com.google.samples.apps.nowinandroid.feature.foryou"
+        )
+    }
 }

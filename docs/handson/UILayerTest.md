@@ -64,3 +64,4 @@ UIテストには、コード変更前後の画面スクリーンショットを
     - [Composeのプレビュー画面でVisual Regression Testを行う](./VisualRegressionTest_Preview.md)
     - [Visual Regression TestをCIで実行する](./VisualRegressionTest_CI.md)
     - [様々なケースでComposeの画面スクリーンショットを撮る](./VisualRegressionTest_Advanced.md)
+    - [Composable Preview Scannerを使ってプレビュー画面のスクリーンショットを撮る](./VisualRegressionTest_Preview_ComposablePreviewScanner.md)
